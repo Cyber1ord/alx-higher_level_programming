@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 for alhabet in range(97, 123):
-    print("{:alhabet}".format(c), end="")
+    print("{:alhabet}".format(alhabet), end="")
