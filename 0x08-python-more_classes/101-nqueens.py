@@ -8,11 +8,13 @@ on an N*N grid such that they are all in non-attacking positions
 
 import sys
 
+
 def solve_nqueens(n):
     solutions = []
     board = [[' ' for _ in range(n)] for _ in range(n)]
     backtrack(board, 0, solutions)
     return solutions
+
 
 def backtrack(board, row, solutions):
     if row == len(board):
@@ -24,6 +26,7 @@ def backtrack(board, row, solutions):
             backtrack(board, row + 1, solutions)
             board[row][col] = ' '
 
+
 def is_valid(board, row, col):
     for i in range(row):
         if board[i][col] == 'Q':
@@ -34,6 +37,7 @@ def is_valid(board, row, col):
             return False
     return True
 
+
 def get_solution(board):
     solution = []
     for row in range(len(board)):
@@ -42,6 +46,7 @@ def get_solution(board):
                 solution.append([row, col])
                 break
     return solution
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

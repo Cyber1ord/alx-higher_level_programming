@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-class MagicString:
-    n = 0
-
-    @classmethod
-    def magic_string(cls):
-        cls.n += 1
-        return "BestSchool, " * (cls.n - 1) + "BestSchool"
+def magic_string():
+    magic_string.n = getattr(magic_string, 'n', 0) + 1
+    return ("BestSchool, " * (magic_string.n - 1) + "BestSchool")
